@@ -4,8 +4,7 @@ import { Img_url } from "./config";
 
 const Logout = (data) => {
   const handleLogoutClick = () => {
-    // Perform logout logic here
-    console.log("Logged out");
+    
   };
 
   return (
