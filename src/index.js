@@ -15,7 +15,7 @@ import Logout from './components/LogoutComponent';
 const App = () => {
   return (
     <>
-    <Outlet />
+    <Outlet/>
     </>
   )
 }

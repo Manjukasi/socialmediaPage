@@ -1,11 +1,11 @@
 import React from "react";
-import Profiles from "./LoginPage";
+import LoginPage from "./LoginPage";
 
 
 const Body = () => {
     return (
         <> 
-            <Profiles />
+            <LoginPage />
         </>
     )
 }

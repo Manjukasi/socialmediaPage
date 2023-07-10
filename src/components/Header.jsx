@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import ProfileComponent from "./ProfileComponent";
 import Logout from "./LogoutComponent";
 
-const Header = (data) => {
+const Header = (details) => {
   const location = useLocation();
   const [showStatus, setShowStatus] = useState(false);
 
@@ -21,15 +21,15 @@ const Header = (data) => {
     setShowStatus(!showStatus);
   };
   return (
-    <div className="header-container">
+    <div className="head-container">
       <header className="header">
-        <h1 className="profilePage">{pageTitle}</h1>
+        <h1 className="page">{pageTitle}</h1>
         <div className="logged-profile" onClick={toggleLogout}>
-          <ProfileComponent {...data} altClassName={"login-profile"} />
+          <ProfileComponent {...details} altClassName={"login-profile"} />
         </div>
       </header>
       <> 
-      {showStatus && <Logout {...data}/>}
+      {showStatus && <Logout {...details}/>}
       </>
     </div>
   );

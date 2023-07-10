@@ -3,7 +3,6 @@ import { Img_url, FETCH_URL } from "./config";
 import MapComponent from "./MapComponent";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Header from "./Header";
 
 const PersonDetail = () => {
   const [person, setPerson] = useState([]);
@@ -28,8 +27,7 @@ const PersonDetail = () => {
           data;
         return (
           <div key ={id}>
-            <Header {...data} />
-            <section className="section">
+            <section className="person-section">
               <div className="first-section">
                 <img
                   className="person-image"
