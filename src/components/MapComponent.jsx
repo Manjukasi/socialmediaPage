@@ -7,8 +7,8 @@ const MapComponent = (props) => {
   const [lng, setLng] = useState(null);
 
   const mapStyles = {
-    width: '700px',
-    height: '360px'
+    width: '600px',
+    height: '270px'
   };
 
   useEffect(() => {

@@ -4,7 +4,6 @@ import { data } from "./config";
 
 const ChatBox = () => {
   const [showChat, setShowChat] = useState(false);
-  const [arrow, setArrow] = useState(false)
 
   const ShowData = () => {
     const personData = data.users;

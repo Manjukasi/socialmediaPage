@@ -125,6 +125,7 @@ h2 {
 .person-section {
   z-index: 0;
   display: flex;
+  height: 90%;
 }
 .first-section {
   border-right: 1px solid rgba(128, 128, 128, 0.374);
