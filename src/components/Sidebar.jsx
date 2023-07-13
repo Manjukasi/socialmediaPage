@@ -7,8 +7,9 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <ul className="nav-items">
-        <Link to={`/profile/${test.profileId * 1}`}>
+        <Link to={`/profile/${test.profileId * 1}`} className="nav">
           <li>Profile</li>
+          {/* <i class="fa-solid fa-angle-right"></i> */}
         </Link>
         <Link to="post">
           <li>Posts</li>

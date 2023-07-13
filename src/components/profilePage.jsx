@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "./Sidebar";
-import { useState, useEffect } from "react";
 import { Outlet, useParams } from "react-router-dom";
 import { FETCH_URL } from "./config";
 import Header from "./Header";
@@ -19,16 +18,24 @@ const ProfilePage = () => {
     const data = await response.json();
     setPerson(data.users);
   }
-  console.log(person);
+
   const filteredData = person.filter(
     (persons) => persons.id === test.profileId * 1
   );
-  console.log(filteredData);
+
+  useEffect(() => {
+    const filteredDataJSON = JSON.stringify(filteredData);
+    localStorage.setItem("filteredData", filteredDataJSON);
+  }, [filteredData]);
+
+  console.log(filteredData)
+
   return (
     <>
       {filteredData.map((details) => {
+        const {id} = details  
         return (
-          <div className="container">
+          <div key= {id} className="container">
             <Sidebar />
             <div className="main-section">
               <Header {...details} />
