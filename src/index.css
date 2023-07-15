@@ -74,18 +74,30 @@
   background-color: rgba(0, 13, 255, 0.46);
   border-radius: 40px;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
+  justify-content: flex-start;
   width: 20%;
   height: 100%;
 }
 
 .nav-items li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.427);
-  font-size: 25px;
-  padding: 10px 10px;
-  width: 200%;
+  font-size: 28px;
+  padding: 10px 0 10px 10px;
+  width: 240px;
   color: rgba(0, 0, 0, 0.688);
+  display: flex;
+  justify-content: space-between;
+}
+.arrow-right {
+  background-color: white;
+  width: 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .person-image {
@@ -112,9 +124,6 @@
   margin-bottom: 30px;
   position: relative;
 }
-h2 {
-  text-align: justify;
-}
 .company {
   margin-top : 5px;
 }
@@ -127,6 +136,7 @@ h2 {
   display: flex;
   height: 90%;
   margin-left: 30px;
+  width: 100%;
 }
 .first-section {
   border-right: 1px solid rgba(128, 128, 128, 0.374);
@@ -150,6 +160,7 @@ h2 {
 }
 .text {
  font-size: 100px;
+ color: rgba(0, 0, 0, 0.107);
 }
 .chat-profiles > .profile-image , .login-profile > .profile-image{
   width: 30px;

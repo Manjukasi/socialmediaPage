@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 const PersonDetail = () => {
   const [person, setPerson] = useState([]);
-  const test = useParams();
+  const {profileId} = useParams();
 
   useEffect(() => {
     callDetails();
@@ -18,7 +18,7 @@ const PersonDetail = () => {
     setPerson(data.users);
   }
   const filteredData = person.filter(
-    (persons) => persons.id === test.profileId * 1
+    (persons) => persons.id === profileId * 1
   );
   return (
     <>
