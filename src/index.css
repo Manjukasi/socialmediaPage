@@ -71,7 +71,7 @@
   color: rgba(0, 0, 0, 0.778);
 }
 .sidebar {
-  background-color: rgba(0, 13, 255, 0.46);
+  background-color: rgb(158, 135, 235);
   border-radius: 40px;
   display: flex;
   align-items: center;
@@ -151,7 +151,7 @@
 }
 .second-section {
   margin-left: 50px;
-  margin-top: 40px;
+  /* margin-top: 20px; */
     padding: 10px 10px;
 
 }
@@ -246,7 +246,7 @@
   align-items: center;
   padding: 0 0.8rem 0 0;
   position: relative;
-  background-color: skyblue;
+  background-color: rgb(158, 135, 235);
   min-height: 35px;
   background-clip: padding-box;
   border-top-left-radius: 20px;
@@ -285,7 +285,7 @@
   touch-action: manipulation;
   font-size: 15px;
   border: none;
-    background-color: skyblue;
+  background-color: rgb(158, 135, 235);
     font-weight: bold;
 }
 .controls {
