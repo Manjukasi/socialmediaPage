@@ -1,25 +1,10 @@
-import React from "react";
-import { Img_url, FETCH_URL } from "./config";
+import React, { useContext } from "react";
+import { Img_url } from "./config";
 import MapComponent from "./MapComponent";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { FilteredDataContext } from "./ProfilePage";
 
 const PersonDetail = () => {
-  const [person, setPerson] = useState([]);
-  const {profileId} = useParams();
-
-  useEffect(() => {
-    callDetails();
-  }, []);
-
-  async function callDetails() {
-    const response = await fetch(FETCH_URL);
-    const data = await response.json();
-    setPerson(data.users);
-  }
-  const filteredData = person.filter(
-    (persons) => persons.id === profileId * 1
-  );
+  const filteredData = useContext(FilteredDataContext);
   return (
     <>
       {filteredData.map((data) => {

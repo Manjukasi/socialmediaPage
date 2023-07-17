@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import Sidebar from "./Sidebar";
 import { Outlet, useParams } from "react-router-dom";
 import { FETCH_URL } from "./config";
 import Header from "./Header";
 import ChatBox from "./Chat";
 
+export const FilteredDataContext = createContext();
+
 const ProfilePage = () => {
   const [person, setPerson] = useState([]);
-  const test = useParams();
+  const { profileId } = useParams();
 
   useEffect(() => {
     callDetails();
@@ -19,23 +21,16 @@ const ProfilePage = () => {
     setPerson(data.users);
   }
 
-  const filteredData = person.filter(
-    (persons) => persons.id === test.profileId * 1
-  );
-
-  useEffect(() => {
-    const filteredDataJSON = JSON.stringify(filteredData);
-    localStorage.setItem("filteredData", filteredDataJSON);
-  }, [filteredData]);
-
+  const filteredData = person.filter((persons) => persons.id === profileId * 1);
   console.log(filteredData)
 
   return (
-    <>
+    <FilteredDataContext.Provider value={filteredData}>
       {filteredData.map((details) => {
-        const {id} = details  
+        console.log("details:", details)
+        const { id } = details;
         return (
-          <div key= {id} className="container">
+          <div key={id} className="container">
             <Sidebar />
             <div className="main-section">
               <Header {...details} />
@@ -45,7 +40,7 @@ const ProfilePage = () => {
           </div>
         );
       })}
-    </>
+    </FilteredDataContext.Provider>
   );
 };
 

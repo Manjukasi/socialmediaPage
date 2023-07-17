@@ -4,7 +4,7 @@ import './index.css';
 import Body from './components/Body';
 import Error from './components/Error';
 import { createBrowserRouter, Outlet, RouterProvider} from "react-router-dom";
-import ProfilePage from './components/profilePage';
+import ProfilePage from './components/ProfilePage';
 import ToDo from './components/Todo';
 import Gallery from './components/Gallery';
 import Post from './components/Post';

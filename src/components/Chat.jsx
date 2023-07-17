@@ -3,7 +3,7 @@ import ProfileComponent from "./ProfileComponent";
 import { data } from "./config";
 
 const ChatBox = () => {
-  const [showChat, setShowChat] = useState(false);
+  const [showChat, toggleShowChat] = useState(false);
 
   const ShowData = () => {
     const personData = data.users;
@@ -14,10 +14,10 @@ const ChatBox = () => {
             <ProfileComponent
               key={person.id}
               {...person}
-              altClassName={"chat-profiles"}
+              altClassName="chat-profiles"
             />
             <span className="online-icon">
-              <i class="fa-solid fa-circle"></i>
+              <i className="fa-regular fa-circle" />
             </span>
           </div>
         ))}
@@ -30,7 +30,9 @@ const ChatBox = () => {
       <div className="chat-list index">
         <header
           className="chat-header"
-          onClick={() => (showChat ? setShowChat(false) : setShowChat(true))}
+          onClick={() =>
+            showChat ? toggleShowChat(false) : toggleShowChat(true)
+          }
         >
           <div className="chat-header icon">
             <div className="message-icon">
@@ -54,7 +56,11 @@ const ChatBox = () => {
         </header>
         <section className="scrollable chat">
           <div className="conversations">
-            <div className="chat-list">{showChat && <ShowData />}</div>
+            {showChat && (
+              <div className="chat-list">
+                <ShowData />
+              </div>
+            )}
           </div>
         </section>
       </div>
