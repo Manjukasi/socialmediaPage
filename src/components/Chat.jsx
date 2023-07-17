@@ -10,11 +10,16 @@ const ChatBox = () => {
     return (
       <div className="chat-component">
         {personData.map((person) => (
-          <ProfileComponent
-            key={person.id}
-            {...person}
-            altClassName={"chat-profiles"}
-          />
+          <div className="person-chat">
+            <ProfileComponent
+              key={person.id}
+              {...person}
+              altClassName={"chat-profiles"}
+            />
+            <span className="online-icon">
+              <i class="fa-solid fa-circle"></i>
+            </span>
+          </div>
         ))}
       </div>
     );

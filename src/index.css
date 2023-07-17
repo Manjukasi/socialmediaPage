@@ -326,7 +326,12 @@
 .chat-component {
   overflow-y: auto;
 }
-
-
+.person-chat {
+  display: flex;
+  justify-content: space-between;
+}
+.online-icon {
+  
+}
 
 
